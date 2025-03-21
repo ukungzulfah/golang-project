@@ -1,0 +1,51 @@
+# Compiled object files and binary executables
+*.exe
+*.dll
+*.dylib
+*.so
+*.o
+*.a
+*.out
+
+# Go workspace file
+go.work
+
+# Go module files
+/go/pkg/
+/go/bin/
+/go/src/
+
+# Dependency directories (commonly used by vendoring tools)
+vendor/
+
+# IDE and editor files
+.vscode/
+.idea/
+*.iml
+
+# Environment files
+.env
+.env.*
+
+# Logs and temp files
+*.log
+*.tmp
+*.swp
+*.swo
+
+# Test binary
+*.test
+
+# Build artifacts
+bin/
+
+# Go coverage tool files
+*.cover
+
+# Cache files
+debug/
+*.cache
+
+# Private keys
+*.key
+*.pem

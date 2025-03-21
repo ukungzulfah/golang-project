@@ -1,0 +1,28 @@
+package db
+
+import (
+	"database/sql"
+	"fmt"
+	"log"
+
+	"analytics_project/config"
+
+	_ "github.com/lib/pq"
+)
+
+func ConnectPostgres() (*sql.DB, error) {
+	config.LoadEnv()
+	dsn := config.GetPostgresDSN()
+
+	db, err := sql.Open("postgres", dsn)
+	if err != nil {
+		return nil, fmt.Errorf("error opening database: %w", err)
+	}
+
+	if err := db.Ping(); err != nil {
+		return nil, fmt.Errorf("error pinging database: %w", err)
+	}
+
+	log.Println("Connected to PostgreSQL successfully!")
+	return db, nil
+}
